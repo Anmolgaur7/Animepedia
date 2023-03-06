@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">AnimePedia</string>
+    <string name="anime1">Naruto</string>
+    <string name="anime2">One Piece</string>
+    <string name="anime3">Demon Slayer</string>
+    <string name="anime4">My hero Academia</string>
+    <string name="anime5">Dragon Ball </string>
+    <string name="anime6">Bleach</string>
+    <string name="anime7">Haikyuu</string>
+    <string name="anime8">Blue lock</string>
+    <string name="anime9">Attack on Titan</string>
+    <string name="anime10">Full metal Alchemist</string>
+    <string name="anime11">Gintama</string>
+
+    <string name="noe">%d</string>
+
+    <string name="desc1">Naruto is a Japanese manga series written and illustrated by Masashi Kishimoto. It tells the story of Naruto Uzumaki, a young ninja who seeks recognition from his peers and dreams of becoming the Hokage, the leader of his village</string>
+    <string name="desc2">Monkey D. Luffy wants to become the King of all pirates. Along his quest he meets: a skilled swordsman named Roronoa Zolo; Nami, a greedy thief who has a knack for navigation; Usopp, a great liar who has an affinity for inventing; Sanji, a warrior cook; Chopper, a sentient deer who is also a skilled…</string>
+    <string name="desc3">Demon Slayer: Kimetsu no Yaiba is a Japanese manga series written and illustrated by Koyoharu Gotouge. It was serialized in Shueisha\'s shōnen manga magazine Weekly Shōnen Jump from February 2016 to May 2020, with its chapters collected in 23 tankōbon volumes.</string>
+    <string name="desc4">My Hero Academia is a Japanese superhero manga series written and illustrated by Kōhei Horikoshi. It has been serialized in Shueisha\'s shōnen manga magazine Weekly Shōnen Jump since July 2014, with its chapters additionally collected into 37 tankōbon volumes as of February 2023. </string>
+    <string name="desc5">Dragon Ball Z" follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. "Dragon Ball Z" teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.</string>
+    <string name="desc6">Ichigo Kurosaki never asked for the ability to see ghosts -- he was born with the gift. When his family is attacked by a Hollow -- a malevolent lost soul -- Ichigo becomes a Soul Reaper, dedicating his life to protecting the innocent and helping the tortured spirits themselves find peace.</string>
+    <string name="desc7">Determined to be like the volleyball championship\'s star player nicknamed "the small giant", Shoyo joins his school\'s volleyball club.</string>
+    <string name="desc8">Youth football players join a controversial project to find the best striker to lead the Japan team to victory.</string>
+    <string name="desc9">Attack on Titan is a Japanese manga series written and illustrated by Hajime Isayama. It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them ...</string>
+    <string name="desc10">Two brothers search for a Philosopher\'s Stone after an attempt to revive their deceased mother goes awry and leaves them in damaged physical forms.</string>
+    <string name="desc11">A samurai and his quirky band of friends take odd-jobs in an alternate version of feudal Japan that has been conquered by aliens.</string>
+
+
+</resources>
