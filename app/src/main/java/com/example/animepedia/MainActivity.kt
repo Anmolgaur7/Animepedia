@@ -19,15 +19,20 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.SemanticsActions.OnClick
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.animepedia.data.Anime
 import com.example.animepedia.data.Animes
 import com.example.animepedia.ui.theme.AnimePediaTheme
@@ -42,7 +47,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color =MaterialTheme.colors.primary
                 ) {
                     Animeapp()
                 }
@@ -69,24 +74,27 @@ LazyColumn(modifier = Modifier.background(MaterialTheme.colors.background),)
 fun Animeitem(anime:Anime,modifier: Modifier=Modifier)
 {
     var expanded by remember{ mutableStateOf(false) }
-    Card(modifier = Modifier.padding(8.dp))
+    Card(modifier = Modifier.padding(20.dp))
     {
         Column(modifier=Modifier.animateContentSize(animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy, stiffness = Spring.StiffnessLow))) 
         {
             Row(modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp)
-                .background(MaterialTheme.colors.surface))
+                .background(Color.Cyan)
+            )
             {
                 Animeicon(anime.imageResourceId)
                 AnimeName(anime.name)
+                Spacer(modifier = Modifier.weight(1F))
                 AnimeEp(anime.numofepisodes)
                 AnimeClick(expanded,OnClick={expanded=!expanded})
             }
-        }
-        if (expanded)
-        {
-         Animedesc(anime.Description)
+            if (expanded)
+            {
+                Spacer(modifier = Modifier.padding(5.dp))
+                Animedesc(anime.Description)
+            }
         }
         }
     }
@@ -95,7 +103,7 @@ fun Animeitem(anime:Anime,modifier: Modifier=Modifier)
 fun AnimeClick(expanded: Boolean, OnClick: () -> Unit) {
     IconButton(onClick = OnClick)
     {
-       
+        Icon(imageVector =if (expanded)Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown, tint = Color.Red, contentDescription = null)
     }
 }
 
@@ -106,8 +114,8 @@ fun AnimeEp(Animeep:Int,modifier: Modifier = Modifier) {
             text = stringResource(id =R.string.noe,Animeep),
             style = MaterialTheme.typography.h3,
             modifier = modifier
-                .padding(top = 8.dp)
-                .size(20.dp)
+                .padding(top = 8.dp),
+            fontSize = 30.sp
         )
     }
 }
@@ -118,7 +126,7 @@ fun AnimeName(@StringRes animename: Int, modifier: Modifier = Modifier)
     Column {
         Text(
             text = stringResource(animename),
-            style = MaterialTheme.typography.h3,
+            style = MaterialTheme.typography.h5,
             modifier = modifier.padding(top = 8.dp)
         )
         }
@@ -146,10 +154,10 @@ fun Animedesc(@StringRes desc:Int, modifier: Modifier=Modifier) {
             top = 8.dp,
             bottom = 16.dp,
             end = 16.dp
-        )
+        ).background(Color.LightGray)
     )
     {
-        Text(text = stringResource(id =desc), style = MaterialTheme.typography.h3)
+        Text(text = stringResource(id =desc), style = MaterialTheme.typography.h5)
 }
 }
 @Preview
@@ -164,18 +172,21 @@ fun AnimeTopAppBar(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .background(color = MaterialTheme.colors.primary)
+            .background(color = Color.LightGray)
     ) {
         Image(
             modifier = Modifier
-                .size(64.dp)
-                .padding(8.dp),
-            painter = painterResource(R.drawable.am1),
+                .size(80.dp)
+                .padding(start = 20.dp, end = 8.dp, top = 20.dp, bottom =15.dp)
+                .clip(RoundedCornerShape(60)),
+            painter = painterResource(R.drawable.am0),
             contentDescription = null
         )
         Text(
+            modifier=Modifier.padding(start =20.dp, end = 8.dp, top = 8.dp, bottom = 8.dp),
             text = stringResource(R.string.app_name),
-            style = MaterialTheme.typography.h1
+            fontSize = 45.sp,
+            fontFamily = FontFamily.Monospace
         )
     }
 }
